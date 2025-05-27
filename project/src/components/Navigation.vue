@@ -24,12 +24,12 @@ const navigation = [
           </div>
         </div>
         <div class="hidden sm:flex sm:space-x-0">
-          <a v-for="item in navigation"
-             :key="item.name"
-             :href="item.href"
-             class="inline-flex items-center px-8 py-2 text-xl font-semibold text-custom-link hover:bg-custom-link-hover hover:text-white transition duration-300 border-b-4 border-transparent hover:border-custom-highlight">
+          <router-link v-for="item in navigation"
+                       :key="item.name"
+                       :to="item.href"
+                       class="inline-flex items-center px-8 py-2 text-xl font-semibold text-custom-link hover:bg-custom-link-hover hover:text-white transition duration-300 border-b-4 border-transparent hover:border-custom-highlight">
             {{ item.name }}
-          </a>
+          </router-link>
         </div>
         <div class="flex items-center sm:hidden pr-4">
           <DisclosureButton class="inline-flex items-center justify-center p-4 rounded-full bg-custom-button hover:bg-custom-button-hover text-white shadow-md transition duration-300">
@@ -43,12 +43,12 @@ const navigation = [
 
     <DisclosurePanel class="sm:hidden">
       <div class="py-6 space-y-2 bg-custom-panel">
-        <a v-for="item in navigation"
-           :key="item.name"
-           :href="item.href"
-           class="block px-6 py-4 text-2xl font-semibold text-custom-panel-link hover:bg-custom-panel-link-hover hover:text-white transition duration-300 border-l-4 border-transparent hover:border-custom-highlight">
+        <router-link v-for="item in navigation"
+                     :key="item.name"
+                     :to="item.href"
+                     class="block px-6 py-4 text-2xl font-semibold text-custom-panel-link hover:bg-custom-panel-link-hover hover:text-white transition duration-300 border-l-4 border-transparent hover:border-custom-highlight">
           {{ item.name }}
-        </a>
+        </router-link>
       </div>
     </DisclosurePanel>
   </Disclosure>
